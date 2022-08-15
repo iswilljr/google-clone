@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .link {
+    @apply text-black hover:underline p-[5px] m-[0.5px];
+  }
+  .button {
+    @apply cursor-pointer mx-2 bg-[#1a73e8] border border-solid border-transparent min-w-[96px] px-[23px] rounded-md text-white min-h-[36px] flex items-center hover:shadow-md shadow-[#1a73e8];
+  }
+  .product {
+    @apply text-[#5f6368] mx-2 w-10 h-10 rounded-full hover:bg-[#3c404314] flex items-center justify-center;
+  }
+}
+
+.logo {
+  height: calc(100% - 560px);
+  min-height: 92px;
+  max-height: 290px;
+}
