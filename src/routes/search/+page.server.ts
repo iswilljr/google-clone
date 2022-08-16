@@ -13,6 +13,8 @@ export const load: PageServerLoad = async (ctx) => {
 
   if (response.status === 404) throw redirect(307, "/");
 
+  console.log(`[${response.status}] ${response.url}`);
+
   return {
     status: response.status,
     results,

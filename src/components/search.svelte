@@ -7,7 +7,7 @@
   export let className = "";
   export let value = "";
 
-  function onHandleClick(event: MouseEvent) {
+  function onHandleClick() {
     value = "";
   }
 </script>
@@ -38,7 +38,10 @@
     id="query"
   />
   {#if quitButton}
-    <button on:click={onHandleClick} class="cursor-pointer border-r border-black pr-3  dark:border-[#5f6368]"
+    <button
+      type="button"
+      on:click={onHandleClick}
+      class="cursor-pointer border-r border-black pr-3  dark:border-[#5f6368]"
       ><svg
         fill="#9aa0a6"
         width="24"

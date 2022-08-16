@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageData } from "./$types";
-  import { search } from "$lib/form";
+  import type { SearchResults } from "src/types/search-response";
 
   import Search from "../../components/search.svelte";
   import ProductsIcon from "../../components/icons/products.svelte";
@@ -8,7 +8,6 @@
   import UserIcon from "../../components/icons/user.svelte";
   import Categories from "../../components/categories.svelte";
   import SearchImage from "../../components/search-img.svelte";
-  import type { SearchResults } from "src/types/search-response";
 
   export let data: PageData;
   const results = data.results as SearchResults;
@@ -26,7 +25,7 @@
       <UserIcon />
     </div>
   </div>
-  <form action="/search" method="get" use:search>
+  <form action="/search" method="get">
     <Search active />
   </form>
   <Categories />
@@ -35,7 +34,7 @@
 <div class="hidden min-w-[1024px] items-center justify-between px-10 py-4 md:flex">
   <div class="flex flex-1 items-center">
     <SearchImage />
-    <form action="/search" method="get" use:search>
+    <form action="/search" method="get">
       <Search value={data.query} active searchButtonRight quitButton className="ml-10 w-[540px]" />
     </form>
   </div>
@@ -77,7 +76,6 @@
   {#if results?.queries?.previousPage}
     <div class="flex justify-center">
       <a
-        sveltekit:prefetch
         href="/search?q={data.query}&start={results.queries.previousPage[0]?.startIndex}"
         class="text-lg text-[#1a0dab] dark:text-[#8ab4f8]"
       >
@@ -88,7 +86,7 @@
   {#if results?.queries?.nextPage}
     <div class="flex justify-center">
       <a
-        sveltekit:prefetch
+        sveltekit:reload
         href="/search?q={data.query}&start={results.queries.nextPage[0]?.startIndex}"
         class="text-lg text-[#1a0dab] dark:text-[#8ab4f8]"
       >
