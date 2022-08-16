@@ -17,8 +17,8 @@
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "@types/cookie": "0.5.1",
-    "@typescript-eslint/eslint-plugin": "5.33.0",
-    "@typescript-eslint/parser": "5.33.0",
+    "@typescript-eslint/eslint-plugin": "5.33.1",
+    "@typescript-eslint/parser": "5.33.1",
     "autoprefixer": "10.4.8",
     "eslint": "8.22.0",
     "eslint-config-prettier": "8.5.0",
@@ -28,6 +28,7 @@
     "postcss": "8.4.16",
     "prettier": "2.7.1",
     "prettier-plugin-svelte": "2.7.0",
+    "prettier-plugin-tailwindcss": "0.1.13",
     "svelte": "3.49.0",
     "svelte-check": "2.8.0",
     "svelte-preprocess": "4.10.7",
@@ -37,5 +38,7 @@
     "vite": "3.0.7"
   },
   "type": "module",
-  "dependencies": {}
+  "dependencies": {
+    "iso-3166-1": "2.1.1"
+  }
 }

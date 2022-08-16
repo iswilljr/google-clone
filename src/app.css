@@ -4,13 +4,13 @@
 
 @layer components {
   .link {
-    @apply text-black hover:underline p-[5px] m-[0.5px];
-  }
-  .button {
-    @apply cursor-pointer mx-2 bg-[#1a73e8] border border-solid border-transparent min-w-[96px] px-[23px] rounded-md text-white min-h-[36px] flex items-center hover:shadow-md shadow-[#1a73e8];
+    @apply m-[0.5px] p-[5px] text-black hover:underline dark:text-white;
   }
   .product {
-    @apply text-[#5f6368] mx-2 w-10 h-10 rounded-full hover:bg-[#3c404314] flex items-center justify-center;
+    @apply mx-2 flex h-10 w-10 items-center justify-center rounded-full text-[#5f6368] hover:bg-[#3c404314] dark:text-white;
+  }
+  .form-button {
+    @apply flex h-9 min-w-[150px] items-center justify-center rounded-md border border-transparent bg-[#f8f9fa] px-4 hover:border-[#dadce0] hover:shadow-md dark:bg-[#303134] dark:hover:border-[#5f6368];
   }
 }
 
