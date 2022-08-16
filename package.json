@@ -39,8 +39,6 @@
   },
   "type": "module",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "google-search-results-nodejs": "^2.1.0",
     "iso-3166-1": "2.1.1"
   }
 }
