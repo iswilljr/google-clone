@@ -26,7 +26,7 @@
     </div>
   </div>
   <form action="/search" method="get">
-    <Search active />
+    <Search value={data.query} active />
   </form>
   <Categories />
 </div>
