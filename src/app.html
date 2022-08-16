@@ -12,12 +12,10 @@
     <div>%sveltekit.body%</div>
     <script>
       (() => {
-        if (localStorage.getItem("theme") === "dark") {
-          document.body.classList.add("dark");
-        }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          document.body.classList.add("dark");
-        }
+        const colorScheme = localStorage.getItem("theme");
+        const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (colorScheme === "dark") return document.body.classList.add("dark");
+        if (prefersDarkMode && !colorScheme) document.body.classList.add("dark");
       })();
     </script>
   </body>

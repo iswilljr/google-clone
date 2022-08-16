@@ -1,10 +1,9 @@
 <script lang="ts">
-  import { enhance } from "../lib/form";
+  import { search } from "$lib/form";
   import iso from "iso-3166-1";
-  import MicIcon from "../components/icons/mic.svelte";
-  import SearchIcon from "../components/icons/search.svelte";
   import ProductsIcon from "../components/icons/products.svelte";
   import SwitchIcon from "../components/icons/Switch.svelte";
+  import Search from "../components/search.svelte";
 </script>
 
 <div class="relative flex h-screen min-h-screen flex-col">
@@ -33,27 +32,9 @@
       class="mx-auto flex h-[160px] w-full max-w-[584px] flex-col items-center justify-center px-6"
       action="/search"
       method="get"
-      use:enhance
+      use:search
     >
-      <div
-        class="flex w-full items-center rounded-full border p-3 shadow-[#9aa0a6] focus-within:shadow-md hover:shadow-md focus:shadow-md dark:border-[#5f6368] dark:shadow-[#171717] dark:hover:border-transparent dark:hover:bg-[#303134]"
-      >
-        <span>
-          <button type="submit" class="flex items-center justify-center">
-            <SearchIcon />
-          </button>
-        </span>
-        <input
-          spellcheck="false"
-          autocomplete="off"
-          autocapitalize="false"
-          class="mx-2 flex-1 border-0 bg-transparent text-base outline-none dark:text-white"
-          type="text"
-          name="q"
-          id="query"
-        />
-        <span><MicIcon /></span>
-      </div>
+      <Search />
       <div class="mt-9 flex w-full items-center justify-center space-x-2 text-sm text-[#202124] dark:text-white">
         <button type="submit" class="form-button">Search with google</button>
         <button type="submit" class="form-button">I&#39;m lucky</button>

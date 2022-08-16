@@ -2,15 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body[class="dark"] {
+    @apply bg-[#202124] text-white;
+  }
+}
+
 @layer components {
   .link {
     @apply m-[0.5px] p-[5px] text-black hover:underline dark:text-white;
   }
   .product {
-    @apply mx-2 flex h-10 w-10 items-center justify-center rounded-full text-[#5f6368] hover:bg-[#3c404314] dark:text-white;
+    @apply mx-2 flex h-10 w-10 items-center justify-center rounded-full text-[#5f6368] hover:bg-[#3c404314] dark:text-white dark:hover:bg-[#3c4043];
   }
   .form-button {
     @apply flex h-9 min-w-[150px] items-center justify-center rounded-md border border-transparent bg-[#f8f9fa] px-4 hover:border-[#dadce0] hover:shadow-md dark:bg-[#303134] dark:hover:border-[#5f6368];
+  }
+  .search-link {
+    @apply mx-3 text-[#202124] dark:text-white;
+  }
+  .search-link.active {
+    @apply border-b-2 border-solid border-[#202124] dark:border-white;
   }
 }
 

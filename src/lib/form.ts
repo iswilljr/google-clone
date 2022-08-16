@@ -1,6 +1,6 @@
 import { goto } from "$app/navigation";
 
-export function enhance(form: HTMLFormElement) {
+export function search(form: HTMLFormElement) {
   async function handle_submit(e: SubmitEvent) {
     e.preventDefault();
     const data = new FormData(form);

@@ -1,6 +1,6 @@
 <script lang="ts">
   function themeHandler() {
-    const theme = localStorage.getItem("theme") || "light";
+    const theme = localStorage.getItem("theme") || (document.body.classList.contains("dark") ? "dark" : "light");
     const newTheme = theme === "light" ? "dark" : "light";
     document.body.classList.remove(theme);
     document.body.classList.add(newTheme);
