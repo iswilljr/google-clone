@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/promise-function-async */
 import { API_KEY, CTX } from "$env/static/private";
 
 const base = "https://www.googleapis.com/customsearch/v1";

@@ -22,7 +22,7 @@
 
   <div class="logo mx-auto flex flex-col items-center">
     <div class="relative mt-auto max-h-24">
-      <img class="mt-auto h-full dark:hidden" alt="Google" height="92" src="/googlelogo.png" width="272" />
+      <img class="mt-auto h-full dark:hidden" alt="Google" height="92" src="google/googlelogo.png" width="272" />
       <img class="mt-auto hidden h-full dark:block" alt="Google" height="92" src="/googlelogo_dark.png" width="272" />
     </div>
   </div>

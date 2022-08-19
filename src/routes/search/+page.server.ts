@@ -4,7 +4,7 @@ import { search } from "./search";
 
 export const load: PageServerLoad = async (ctx) => {
   const query = ctx.url.searchParams.get("q");
-  const start = +(ctx.url.searchParams.get("start") || 0);
+  const start = +(ctx.url.searchParams.get("start") ?? 0);
 
   if (!query) throw redirect(307, "/");
 
