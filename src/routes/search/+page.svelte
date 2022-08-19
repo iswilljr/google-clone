@@ -76,6 +76,7 @@
   {#if results?.queries?.previousPage}
     <div class="flex justify-center">
       <a
+        sveltekit:reload
         href="/search?q={data.query}&start={results.queries.previousPage[0]?.startIndex}"
         class="text-lg text-[#1a0dab] dark:text-[#8ab4f8]"
       >
