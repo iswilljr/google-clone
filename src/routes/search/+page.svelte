@@ -77,7 +77,7 @@
     <div class="flex justify-center">
       <a
         sveltekit:reload
-        href="/search?q={data.query}&start={results.queries.previousPage[0]?.startIndex}"
+        href="/search?q={data.query}&start={results.queries.previousPage[0]?.startIndex ?? 0}"
         class="text-lg text-[#1a0dab] dark:text-[#8ab4f8]"
       >
         Previous
@@ -88,7 +88,7 @@
     <div class="flex justify-center">
       <a
         sveltekit:reload
-        href="/search?q={data.query}&start={results.queries.nextPage[0]?.startIndex}"
+        href="/search?q={data.query}&start={results.queries.nextPage[0]?.startIndex ?? 0}"
         class="text-lg text-[#1a0dab] dark:text-[#8ab4f8]"
       >
         Load more
