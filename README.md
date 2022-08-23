@@ -16,7 +16,7 @@ yarn
 
 ### Env Variables
 
-`API_KEY` and `CTX` are required to be able to use googleapis.
+`API_KEY` and `CTX` are required to use googleapis.
 
 You can get the api key [Here](https://console.cloud.google.com/projectcreate). Then go to the dashboard > APIs & Services > Credential, then click on show key, copy and paste the api key on an `.env` file like this:
 
@@ -24,7 +24,7 @@ You can get the api key [Here](https://console.cloud.google.com/projectcreate). 
 API_KEY=...
 ```
 
-You cant get the context [here](https://programmablesearchengine.google.com/controlpanel/create). Then go to the dashboard > Overview > Basic > Search engine ID, copy and paste on the `env` file. finally the `env` file should look like this:
+You can get the context [here](https://programmablesearchengine.google.com/controlpanel/create). Then go to the dashboard > Overview > Basic > Search engine ID, copy and paste on the `env` file. finally the `env` file should look like this:
 
 ```env
 API_KEY=...
