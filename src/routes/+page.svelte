@@ -6,17 +6,21 @@
   import Search from "../components/search.svelte";
 </script>
 
+<svelte:head>
+  <meta name="description" content="A Google Clone made with Svelte Kit" />
+</svelte:head>
+
 <div class="relative flex h-screen min-h-screen flex-col">
   <header class="flex h-[60px] items-center justify-between py-[6px] px-[15px] text-sm">
     <div class="flex items-center">
       <SwitchIcon />
     </div>
     <div class="flex items-center">
-      <a href="#gmail" class="link">Gmail</a>
-      <a href="#images" class="link">Images</a>
-      <a href="#products" class="product">
+      <button class="link">Gmail</button>
+      <button class="link">Images</button>
+      <button class="product" aria-label="producs">
         <ProductsIcon />
-      </a>
+      </button>
     </div>
   </header>
 
@@ -43,7 +47,7 @@
   </div>
 
   <div class="flex flex-1 flex-col justify-end">
-    <footer class="bg-[#f2f2f2] text-sm text-[#70757a] dark:bg-[#171717] dark:text-[#9aa0a6]">
+    <footer class="bg-[#f2f2f2] text-sm text-[#757575] dark:bg-[#171717] dark:text-[#9aa0a6]">
       <div class="min-h-[45px] border-b border-[#dadce0] py-3 px-8 dark:border-[#3c4043]">
         {typeof navigator !== "undefined"
           ? iso.whereAlpha2(navigator.language.split("-")[1])?.country ?? navigator.language
@@ -51,15 +55,15 @@
       </div>
       <div class="flex flex-col items-center justify-center px-4 md:flex-row">
         <div class="flex w-full flex-wrap items-center justify-center md:w-3/5 md:flex-nowrap md:justify-start">
-          <a href="#a" class="p-3">About</a>
-          <a href="#a" class="p-3">Advertising</a>
-          <a href="#a" class="p-3">Business</a>
-          <a href="#a" class="p-3">How Search Works</a>
+          <button class="p-3">About</button>
+          <button class="p-3">Advertising</button>
+          <button class="p-3">Business</button>
+          <button class="p-3">How Search Works</button>
         </div>
         <div class="flex w-full flex-wrap items-center justify-center md:w-2/5 md:justify-end">
-          <a href="#a" class="p-3">Privacy</a>
-          <a href="#a" class="p-3">Conditions</a>
-          <a href="#a" class="p-3">Preferences</a>
+          <button class="p-3">Privacy</button>
+          <button class="p-3">Conditions</button>
+          <button class="p-3">Preferences</button>
         </div>
       </div>
     </footer>

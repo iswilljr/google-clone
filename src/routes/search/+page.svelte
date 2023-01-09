@@ -11,7 +11,13 @@
 
   export let data: PageData;
   const results = data.results as SearchResults;
+  const totalResults = results?.searchInformation?.formattedTotalResults || 0;
 </script>
+
+<svelte:head>
+  <title>{data.query} - Search with Google</title>
+  <meta name="description" content={`Showing ${totalResults} results for ${data.query}`} />
+</svelte:head>
 
 <div class="w-full p-4 md:hidden">
   <div class="mb-3 flex items-center justify-between">
@@ -39,13 +45,13 @@
     </form>
   </div>
   <div class="flex items-center">
-    <a href="#products" class="product mx-0">
+    <button class="product mx-0" aria-label="setting">
       <SettingsIcon />
-    </a>
-    <a href="#products" class="product mx-0">
+    </button>
+    <button class="product mx-0" aria-label="products">
       <ProductsIcon />
-    </a>
-    <div class="flex h-10 w-10 items-center justify-center">
+    </button>
+    <div class="flex h-10 w-10 items-center justify-center" aria-label="profile">
       <UserIcon />
     </div>
   </div>
@@ -56,14 +62,13 @@
 </div>
 
 <div class="mt-2 px-4 text-xs text-black dark:text-[#bdc1c6] md:block md:px-10 lg:px-44">
-  About {results?.searchInformation?.formattedTotalResults || 0} results ({results?.searchInformation
-    ?.formattedSearchTime || 0} seconds)
+  About {totalResults} results ({results?.searchInformation?.formattedSearchTime || 0} seconds)
 </div>
 
 <div class="px-4 text-xs md:block md:px-10 lg:px-44" id="search">
   {#each results?.items || [] as result}
     <div class="group mt-6 md:max-w-[600px]">
-      <a class="space-y-1" href={result.link} alt={result.title}>
+      <a class="space-y-1" href={result.link}>
         <div class="truncate text-black dark:text-[#bdc1c6]">{result.link}</div>
         <div class="text-lg text-[#1a0dab] group-hover:underline dark:text-[#8ab4f8]">{result.title}</div>
         <div class="text-[#4d5156] dark:text-[#bdc1c6]">{result.snippet}</div>
@@ -76,7 +81,7 @@
   {#if results?.queries?.previousPage}
     <div class="flex justify-center">
       <a
-        sveltekit:reload
+        data-sveltekit-reload
         href="/search?q={data.query}&start={results.queries.previousPage[0]?.startIndex ?? 0}"
         class="text-lg text-[#1a0dab] dark:text-[#8ab4f8]"
       >
@@ -87,7 +92,7 @@
   {#if results?.queries?.nextPage}
     <div class="flex justify-center">
       <a
-        sveltekit:reload
+        data-sveltekit-reload
         href="/search?q={data.query}&start={results.queries.nextPage[0]?.startIndex ?? 0}"
         class="text-lg text-[#1a0dab] dark:text-[#8ab4f8]"
       >

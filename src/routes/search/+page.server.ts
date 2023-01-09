@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-throw-literal */
 import type { PageServerLoad } from "./$types";
 import { redirect } from "@sveltejs/kit";
 import { search } from "./search";

@@ -13,6 +13,7 @@ export function search(form: HTMLFormElement) {
   form.addEventListener("submit", handleSubmit);
 
   return {
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
     destroy: () => form.removeEventListener("submit", handleSubmit),
   };
 }

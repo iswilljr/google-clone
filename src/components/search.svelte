@@ -21,12 +21,13 @@
 >
   {#if !searchButtonRight}
     <span>
-      <button type="submit" class="flex items-center justify-center">
+      <button type="submit" class="flex items-center justify-center" aria-label="search">
         <SearchIcon />
       </button>
     </span>
   {/if}
 
+  <label hidden for="query">Query</label>
   <input
     spellcheck="false"
     autocomplete="off"
@@ -58,7 +59,7 @@
   <span class={quitButton ? "ml-3" : ""}><MicIcon /></span>
   {#if searchButtonRight}
     <span class="ml-5">
-      <button type="submit" class="flex items-center justify-center">
+      <button type="submit" class="flex items-center justify-center" aria-label="search">
         <SearchIcon />
       </button>
     </span>
