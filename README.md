@@ -4,7 +4,7 @@ A google clone using google credentials and context key
 
 ## Introduction
 
-This is a google clone, the project is created using svelte kit framework. Uses Googleapis and tries to mimic the UI and frontend behaviours of the official google site as much as possible.
+This is a google clone, the project is created using svelte kit framework. Uses Googleapis and tries to mimic the UI and frontend behaviors of the official google site as much as possible.
 
 ## Installation
 
