@@ -11,7 +11,7 @@ This is a google clone, the project is created using svelte kit framework. Uses 
 ```bash
 git clone https://github.com/iswilljr/google-clone.git
 cd spotify-clone
-yarn
+pnpm i
 ```
 
 ### Env Variables
