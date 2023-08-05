@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageData } from "./$types";
-  import type { SearchResults } from "src/types/search-response";
+  import type { SearchResults } from "../../types/search-response";
 
   import Search from "../../components/search.svelte";
   import ProductsIcon from "../../components/icons/products.svelte";
